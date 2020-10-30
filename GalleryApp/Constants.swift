@@ -8,5 +8,8 @@
 import Foundation
 
 struct K {
-    
+    struct ImageCell {
+        static let reuseId = "ImageCell"
+        static let nib = "ImageCell"
+    }
 }

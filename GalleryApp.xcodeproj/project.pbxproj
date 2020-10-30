@@ -20,6 +20,7 @@
 		22ECD525254C560200463665 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22ECD523254C560200463665 /* ImageCell.xib */; };
 		22ECD528254C567500463665 /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECD527254C567500463665 /* ImageViewModel.swift */; };
 		22ECD52B254C568500463665 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECD52A254C568500463665 /* GalleryViewModel.swift */; };
+		22ECD532254C8C8900463665 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECD531254C8C8900463665 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		22ECD523254C560200463665 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		22ECD527254C567500463665 /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
 		22ECD52A254C568500463665 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
+		22ECD531254C8C8900463665 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		3402B063CA3EFA5CC3C1CB1F /* Pods-GalleryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GalleryApp.debug.xcconfig"; path = "Target Support Files/Pods-GalleryApp/Pods-GalleryApp.debug.xcconfig"; sourceTree = "<group>"; };
 		3D53D798501445B0AA2A55A7 /* Pods_GalleryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GalleryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D907CCCFB8EFF175FD568E0E /* Pods-GalleryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GalleryApp.release.xcconfig"; path = "Target Support Files/Pods-GalleryApp/Pods-GalleryApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				22ECD4F8254C4EB700463665 /* AppDelegate.swift */,
 				22ECD4FA254C4EB700463665 /* SceneDelegate.swift */,
+				22ECD530254C8C6F00463665 /* Network */,
 				22ECD517254C500400463665 /* Model */,
 				22ECD515254C4FEA00463665 /* ViewModel */,
 				22ECD516254C4FF400463665 /* View */,
@@ -131,6 +134,14 @@
 				22ECD523254C560200463665 /* ImageCell.xib */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		22ECD530254C8C6F00463665 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				22ECD531254C8C8900463665 /* NetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		EC13A92CDAFC9C746E13CBE7 /* Frameworks */ = {
@@ -255,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22ECD532254C8C8900463665 /* NetworkService.swift in Sources */,
 				22ECD519254C502500463665 /* Constants.swift in Sources */,
 				22ECD503254C4EB700463665 /* GalleryApp.xcdatamodeld in Sources */,
 				22ECD4FD254C4EB700463665 /* GalleryViewController.swift in Sources */,
