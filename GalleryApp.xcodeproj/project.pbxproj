@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		14AA8F3791A3F63A783B7DC5 /* Pods_GalleryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D53D798501445B0AA2A55A7 /* Pods_GalleryApp.framework */; };
+		221274932553FA3400E94122 /* GElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221274922553FA3400E94122 /* GElement.swift */; };
 		22ECD4F9254C4EB700463665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECD4F8254C4EB700463665 /* AppDelegate.swift */; };
 		22ECD4FB254C4EB700463665 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECD4FA254C4EB700463665 /* SceneDelegate.swift */; };
 		22ECD4FD254C4EB700463665 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECD4FC254C4EB700463665 /* GalleryViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		221274922553FA3400E94122 /* GElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GElement.swift; sourceTree = "<group>"; };
 		22ECD4F5254C4EB700463665 /* GalleryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GalleryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22ECD4F8254C4EB700463665 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22ECD4FA254C4EB700463665 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				22ECD501254C4EB700463665 /* GalleryApp.xcdatamodeld */,
+				221274922553FA3400E94122 /* GElement.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				22ECD532254C8C8900463665 /* NetworkService.swift in Sources */,
 				22ECD519254C502500463665 /* Constants.swift in Sources */,
 				22ECD503254C4EB700463665 /* GalleryApp.xcdatamodeld in Sources */,
+				221274932553FA3400E94122 /* GElement.swift in Sources */,
 				22ECD4FD254C4EB700463665 /* GalleryViewController.swift in Sources */,
 				22ECD4F9254C4EB700463665 /* AppDelegate.swift in Sources */,
 				22ECD520254C55AE00463665 /* ImageViewController.swift in Sources */,

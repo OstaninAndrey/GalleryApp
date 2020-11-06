@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z39-i2-voh">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="78" width="414" height="784"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HUt-7D-xog">
                                     <size key="itemSize" width="128" height="128"/>
@@ -41,14 +41,22 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="WDQ-AD-X5k"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GalleryApp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4No-k0-tjp">
+                                <rect key="frame" x="152.5" y="44" width="109" height="26"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Z39-i2-voh" secondAttribute="bottom" id="506-XW-nVz"/>
-                            <constraint firstItem="Z39-i2-voh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="E12-uF-dwI"/>
                             <constraint firstItem="Z39-i2-voh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IRw-fc-zXt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Z39-i2-voh" secondAttribute="trailing" id="OiI-Od-2Ks"/>
+                            <constraint firstItem="4No-k0-tjp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V8k-4g-6Td"/>
+                            <constraint firstItem="Z39-i2-voh" firstAttribute="top" secondItem="4No-k0-tjp" secondAttribute="bottom" constant="8" symbolic="YES" id="chF-MT-FOu"/>
+                            <constraint firstItem="4No-k0-tjp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fXJ-wQ-CZF"/>
                         </constraints>
                     </view>
                     <connections>
@@ -57,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130" y="115"/>
+            <point key="canvasLocation" x="128.98550724637681" y="114.50892857142857"/>
         </scene>
     </scenes>
     <resources>

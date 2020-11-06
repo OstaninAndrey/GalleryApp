@@ -9,17 +9,28 @@ import UIKit
 
 class ImageCell: UICollectionViewCell {
 
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var isLoadedLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    private var imgVM: ImageViewModel?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
+        imageView.image = nil
+        titleLabel.text = ""
+        isLoadedLabel.textColor = UIColor.systemGray
     }
     
     func configure(imgVM: ImageViewModel) {
-        
+        self.imgVM = imgVM
+        titleLabel.text = imgVM.getTitle()
     }
+    
+    
 }

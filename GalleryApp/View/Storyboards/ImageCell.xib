@@ -62,7 +62,13 @@
                 <constraint firstAttribute="trailing" secondItem="k1T-xu-mVG" secondAttribute="trailing" constant="5" id="qt8-GU-kAl"/>
             </constraints>
             <size key="customSize" width="216" height="305"/>
-            <point key="canvasLocation" x="302.89855072463769" y="157.70089285714286"/>
+            <connections>
+                <outlet property="backView" destination="k1T-xu-mVG" id="y7d-Sq-CG7"/>
+                <outlet property="imageView" destination="UF1-mq-WhH" id="4JU-Gi-0MC"/>
+                <outlet property="isLoadedLabel" destination="cBK-yh-r6r" id="9dc-Su-eYz"/>
+                <outlet property="titleLabel" destination="IFi-QY-Kfi" id="b2n-f2-z3u"/>
+            </connections>
+            <point key="canvasLocation" x="491" y="157"/>
         </collectionViewCell>
     </objects>
     <resources>
