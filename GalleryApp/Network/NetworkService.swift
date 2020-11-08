@@ -5,27 +5,38 @@
 //  Created by Андрей Останин on 30.10.2020.
 //
 
-import Foundation
+import UIKit
 import Alamofire
+import AlamofireImage
 
 class NetworkService {
     
-    typealias WebResponse = ([[String: Any]]?, Error?) -> Void
+    typealias WebResponse = (UIImage?, [[String: Any]]?, Error?) -> Void
     
     func makeRequest(url: String, completion: @escaping WebResponse) {
+        
+        AF.request(url).responseImage { (response) in
+            if case .success(let image) = response.result {
+                completion(image, nil, nil)
+                return
+            }
+        }
+        
         AF.request(url).responseJSON(completionHandler: { (response) in
-            
             switch response.result{
             case .success(let value):
                 if let jsonArray = value as? [[String: Any]] {
-                    completion(jsonArray, nil)
+                    completion(nil, jsonArray, nil)
+                    return
                 }
                 if let jsonDict = value as? [String: Any] {
-                    completion([jsonDict], nil)
-                }
-            case .failure(_): break
+                    completion(nil, [jsonDict], nil)
+                    return
+                } 
+            case .failure(let err):
+                completion(nil, nil, err)
+                return
             }
-            
         })
         
     }

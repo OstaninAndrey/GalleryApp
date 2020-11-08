@@ -12,4 +12,10 @@ struct K {
         static let reuseId = "ImageCell"
         static let nib = "ImageCell"
     }
+    
+    static let fullImageSegue = "fullImageSegue"
+    
+    struct Paging {
+        static let size = 25
+    }
 }

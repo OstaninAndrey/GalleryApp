@@ -29,7 +29,17 @@ class ImageCell: UICollectionViewCell {
     
     func configure(imgVM: ImageViewModel) {
         self.imgVM = imgVM
-        titleLabel.text = imgVM.getTitle()
+        titleLabel.text = imgVM.title
+        
+        // start loading photo
+        imgVM.loadImage(size: .thumbNail) { (img) in
+            guard let safeImg = img else {
+                return
+            }
+            DispatchQueue.main.async {
+                self.imageView.image = safeImg
+            }
+        }
     }
     
     

@@ -5,15 +5,15 @@
 //  Created by Андрей Останин on 30.10.2020.
 //
 
-import Foundation
+import UIKit
 
 class GalleryViewModel {
     private let nwSer = NetworkService()
     private var galleryElements: [ImageViewModel] = []
     private var start = 0
-    private let limit = 10
+    private let limit = K.Paging.size
     
-    func getElemNumber() -> Int {
+    var elemNumber: Int {
         return galleryElements.count
     }
 
@@ -26,10 +26,9 @@ class GalleryViewModel {
     }
     
     func fetchNewPortion(completion: @escaping () -> Void) {
-        
         let url = "http://jsonplaceholder.typicode.com/photos?_start=\(start)&_limit=\(limit)"
         
-        nwSer.makeRequest(url: url) { (jsonArr, err) in
+        nwSer.makeRequest(url: url) { (_, jsonArr, err) in
             guard let array = jsonArr else {
                 return
             }
@@ -47,6 +46,13 @@ class GalleryViewModel {
             
             completion()
         }
+    }
+    
+    func openFullImage(at index: Int) {
+        guard index <= galleryElements.count else {
+            return
+        }
+            
     }
     
 }
