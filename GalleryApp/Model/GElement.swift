@@ -13,6 +13,7 @@ class GElement {
     let title: String
     let url: String
     let thumbnailUrl: String
+    var isLoaded: Bool? = false
     
     init?(json: [String: Any]) {
         self.albumId = json["albumId"] as! Int

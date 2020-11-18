@@ -13,23 +13,40 @@ class ImageViewController: UIViewController {
     @IBOutlet weak var loadingStatusLabel: UILabel!
     private var imgVM: ImageViewModel?
     
+    private var image: UIImage? {
+        didSet {
+            fullImageView.image = image
+            // stopAnimating and hide activity indicator
+            
+            imgVM?.loadProcessCondition(completion: { (text, _) in
+                loadingStatusLabel.text = text
+            })
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadContent()
+        imgVM?.loadProcessCondition(completion: { (text, _) in
+            loadingStatusLabel.text = text
+        })
     }
     
-    func configure(imgVM: ImageViewModel) {
+    func configure(imgVM: ImageViewModel, completion: @escaping () -> Void) {
         self.imgVM = imgVM
+        loadContent{
+            completion()
+        }
     }
     
-    func loadContent() {
+    private func loadContent(completion: @escaping () -> Void) {
         self.imgVM?.loadImage(size: .full) { (img) in
             guard let safeImg = img else {
                 return
             }
             DispatchQueue.main.async {
-                self.fullImageView.image = safeImg
+                self.image = safeImg
+                completion()
             }
         }
     }

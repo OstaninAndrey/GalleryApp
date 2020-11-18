@@ -17,19 +17,22 @@ class ImageCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         imageView.image = nil
         titleLabel.text = ""
-        isLoadedLabel.textColor = UIColor.systemGray
+        isLoadedLabel.textColor = UIColor.clear
     }
     
     func configure(imgVM: ImageViewModel) {
         self.imgVM = imgVM
         titleLabel.text = imgVM.title
+        
+        self.imgVM?.loadProcessCondition(completion: { (_, col) in
+            isLoadedLabel.textColor = col
+        })
         
         // start loading photo
         imgVM.loadImage(size: .thumbNail) { (img) in

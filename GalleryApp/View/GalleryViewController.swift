@@ -27,7 +27,6 @@ class GalleryViewController: UIViewController {
         super.viewWillAppear(true)
         
         configureCollectionView()
-        
     }
 
     func configureCollectionView() {
@@ -44,7 +43,9 @@ class GalleryViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! ImageViewController
         
-        vc.configure(imgVM: sender as! ImageViewModel)
+        vc.configure(imgVM: sender as! ImageViewModel) {
+            self.collectionView.reloadData()
+        }
     }
 
 }
@@ -63,7 +64,6 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
         return galleryVM.elemNumber
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = collectionView.dequeueReusableCell(withReuseIdentifier: K.ImageCell.reuseId, for: indexPath) as! ImageCell
         
@@ -71,7 +71,7 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
             item.configure(imgVM: vm)
         }
         
-        if galleryVM.lastElement(at: indexPath.item) {
+        if galleryVM.lastElement(is: indexPath.item) {
             
             galleryVM.fetchNewPortion{
                 DispatchQueue.main.async {

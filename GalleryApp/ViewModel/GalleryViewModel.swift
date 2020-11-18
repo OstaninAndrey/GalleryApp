@@ -21,29 +21,25 @@ class GalleryViewModel {
         return galleryElements[index]
     }
     
-    func lastElement(at index: Int) -> Bool{
+    func lastElement(is index: Int) -> Bool{
         return index == galleryElements.count-1 ? true:false
     }
     
     func fetchNewPortion(completion: @escaping () -> Void) {
         let url = "http://jsonplaceholder.typicode.com/photos?_start=\(start)&_limit=\(limit)"
         
-        nwSer.makeRequest(url: url) { (_, jsonArr, err) in
+        nwSer.makeRequest(url: url) { [unowned self] (_, jsonArr, err) in
             guard let array = jsonArr else {
                 return
             }
-            
             self.start = self.limit
             
             array.forEach{ json in
-                
                 if let element = GElement(json: json) {
                     self.galleryElements.append(ImageViewModel(imageObj: element))
                 }
             }
-            
-            print(self.galleryElements.count)
-            
+            //print(self.galleryElements.count)
             completion()
         }
     }
